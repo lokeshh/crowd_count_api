@@ -56,4 +56,5 @@ Rails.application.routes.draw do
   
   root 'shops#index'
   get 'shop/:id' => 'shops#show_count'
+  post 'shop/:id' => 'shops#update_count'
 end
