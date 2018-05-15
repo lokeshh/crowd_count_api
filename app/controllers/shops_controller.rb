@@ -15,6 +15,9 @@ class ShopsController < ApplicationController
     file = "#{Rails.root}/python/pic.jpeg"
     png = Base64.decode64(params[:data])
     File.open(file, 'wb') { |f| f << png }
+    count = `python python/count.py -i python/pic.jpeg`
+    @shop.count = count
+    @shop.save!
     if File.exist?(file)
       render :json => {
         :success => true
