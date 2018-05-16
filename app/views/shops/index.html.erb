@@ -1,26 +1,20 @@
  <div class="jumbotron text-center">
   <h1>Crowd Counting and Forecasting</h1>
+  <br>
   <div class="alert alert-primary" role="alert">
-    Congrats if this is working!
+    Save time rather than standing in queues!!!
   </div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-  </div>
-</div> 
+  <% @shops.each do |shop| %>
+    <center>
+      <%= link_to "/shop/#{shop.id}" do %>
+        <div class="card bg-secondary text-white">
+          <div class="card-body"><%= shop.name %></div>
+        </div>
+      <% end %>
+    </center>
+    <br>
+  <% end %>
+</div>

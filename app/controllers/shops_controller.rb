@@ -2,9 +2,10 @@ class ShopsController < ApplicationController
   protect_from_forgery with: :null_session
   
   def index
+    @shops = Shop.all
     respond_to do |format|
       format.html
-      format.json { render json: Shop.all }
+      format.json { render json: @shops }
     end    
   end
   

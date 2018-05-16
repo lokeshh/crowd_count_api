@@ -1,1 +1,23 @@
-<h1>lol</h1>
+<div class="jumbotron text-center">
+  <h1><%= @shop.name %></h1>
+  <br>
+  <div class="alert alert-primary" role="alert">
+    Save time rather than standing in queues!!!
+  </div>
+</div>
+
+<div class="container">
+  <center>
+    <div class="card bg-info text-white">
+      <div class="card-body">Count: <%= @shop.count %></div>
+    </div>
+  </center>
+  
+  <br>
+  
+  <%= link_to root_path do %>
+    <button type="button" class="btn btn-outline-primary">
+      Go Back
+    </button>
+  <% end %>
+</div> 
