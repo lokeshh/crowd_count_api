@@ -1,13 +1,21 @@
 class ShopsController < ApplicationController
   protect_from_forgery with: :null_session
+  
   def index
-    render json: Shop.all
+    respond_to do |format|
+      format.html
+      format.json { render json: Shop.all }
+    end    
   end
   
   def show_count
-    
     @shop = Shop.find(params[:id])
-    render json: @shop
+    respond_to do |format|
+
+      format.html
+      format.json { render json: @shop }
+
+    end
   end
   
   def update_count
@@ -17,7 +25,7 @@ class ShopsController < ApplicationController
     File.open(file, 'wb') { |f| f << png }
     count = `python python/count.py -i python/pic.jpeg`
     @shop.count = count
-    @shop.save!
+    @shop.save
     if File.exist?(file)
       render :json => {
         :success => true
