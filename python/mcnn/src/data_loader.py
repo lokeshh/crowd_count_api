@@ -22,7 +22,6 @@ class ImageDataLoader():
         self.blob_list = {}
         self.id_list = range(0,self.num_samples)
         if self.pre_load:
-            print 'Pre-loading the data. This may take a while...'
             idx = 0
             for fname in self.data_files:
 
@@ -56,7 +55,6 @@ class ImageDataLoader():
                 if idx % 100 == 0:
                     print 'Loaded ', idx, '/', self.num_samples, 'files'
 
-            print 'Completed Loading ', idx, 'files'
 
 
     def __iter__(self):

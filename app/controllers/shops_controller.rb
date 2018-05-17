@@ -21,10 +21,11 @@ class ShopsController < ApplicationController
   
   def update_count
     @shop = Shop.find(params[:id])
-    file = "#{Rails.root}/python/pic.jpeg"
+    file = "#{Rails.root}/python/mcnn/data/frames/pic.jpeg"
     png = Base64.decode64(params[:data])
     File.open(file, 'wb') { |f| f << png }
-    count = `python python/count.py -i python/pic.jpeg`
+    count = `python python/mcnn/test.py`
+    p count
     @shop.count = count
     @shop.save
     if File.exist?(file)

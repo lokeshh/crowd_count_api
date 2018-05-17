@@ -15,9 +15,9 @@ torch.backends.cudnn.benchmark = False
 vis = False
 save_output = False
 
-data_path =  './data/frames/'
-gt_path = './data/original/shanghaitech/part_A_final/test_data/ground_truth_csv/'
-model_path = './final_models/mcnn_shtechB_110.h5'
+data_path =  './python/mcnn/data/frames/'
+gt_path = './python/mcnn/data/original/shanghaitech/part_A_final/test_data/ground_truth_csv/'
+model_path = './python/mcnn/final_models/mcnn_shtechB_110.h5'
 
 
 net = CrowdCounter()
@@ -37,4 +37,4 @@ for blob in data_loader:
     density_map = density_map.data.cpu().numpy()
     # gt_count = np.sum(gt_data)
     et_count = np.sum(density_map)
-    print et_count
+    print int(et_count)
