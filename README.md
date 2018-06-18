@@ -18,3 +18,16 @@ This folder contains the code to send the pic to the server for processing and u
 
 ### /app/controllers/shop_controller.rb
 This file implements the main API of accepting the image, provide count to the Android app, save count to database and calling Python to do the counting.
+
+## Installation
+1. Install Ruby 2.4 (rvm recommended)
+2. Run `bundle install`.
+3. Migrate database schema using `rake db:migrate`.
+4. Populate shop table in the database:
+  a. Open rails console using `rails c`.
+  b. Create 3, 4 entries such as:
+    1. `Shop.create! name: 'KBH', count: 20`
+    2. `Shop.create! name: 'Nescafe', count: 30`
+    3. `Shop.create! name: 'Hospital', count: 5`
+    4. `Shop.create! name: 'Hangouts', count: 100`
+  c. Make sure these shops appear in the home page by running `rails s`.
