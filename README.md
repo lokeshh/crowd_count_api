@@ -24,10 +24,10 @@ This file implements the main API of accepting the image, provide count to the A
 2. Run `bundle install`.
 3. Migrate database schema using `rake db:migrate`.
 4. Populate shop table in the database:
-  1. Open rails console using `rails c`.
-  2. Create 3, 4 entries such as:
-    1. `Shop.create! name: 'KBH', count: 20`
-    2. `Shop.create! name: 'Nescafe', count: 30`
-    3. `Shop.create! name: 'Hospital', count: 5`
-    4. `Shop.create! name: 'Hangouts', count: 100`
-  3. Make sure these shops appear in the home page by running `rails s`.
+    1. Open rails console using `rails c`.
+    2. Create 3, 4 entries such as:
+      * `Shop.create! name: 'KBH', count: 20`
+      * `Shop.create! name: 'Nescafe', count: 30`
+      * `Shop.create! name: 'Hospital', count: 5`
+      * `Shop.create! name: 'Hangouts', count: 100`
+    3. Make sure these shops appear in the home page by running `rails s`.
